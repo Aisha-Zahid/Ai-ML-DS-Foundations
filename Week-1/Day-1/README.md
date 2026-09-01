@@ -1,6 +1,6 @@
 # Adult Income Prediction
 
-ML Foundations assignment using the UCI Adult (Census Income) dataset.
+ML Foundations using the UCI Adult (Census Income) dataset.
 
 ## Setup
 
