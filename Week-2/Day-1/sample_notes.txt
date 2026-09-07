@@ -1,0 +1,3 @@
+Project notes
+- Known weather cities: Karachi, Lahore, Islamabad, London, Tokyo.
+- Keep API keys out of git.
