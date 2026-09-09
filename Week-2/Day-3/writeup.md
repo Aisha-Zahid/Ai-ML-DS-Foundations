@@ -1,27 +1,27 @@
-# Week 2 Day 3 Write-up — LangGraph vs Raw Loops
+# Week 2 Day 3 Write-up — LangGraph
 
-## 1) LangGraph core building blocks
+## 1) LangGraph building blocks
 
-- **StateGraph**: defines a directed graph where each node reads/writes a shared State object.
-- **Nodes**: Python functions that take the current State and return partial updates.
-- **Edges**: transitions between nodes (including conditional edges that choose the next node).
-- **Shared State**: a schema (TypedDict/Pydantic) that keeps everything the workflow needs in one place.
+- **StateGraph**: a graph where each step reads and updates shared state
+- **Nodes**: functions that take state and return updates
+- **Edges**: transitions between nodes
+- **Conditional edges**: a router picks the next node based on state
+- **Shared State**: TypedDict/Pydantic fields kept across the whole run
 
-## 2) Why cycles feel natural in LangGraph
+## 2) Why loops are easier in LangGraph
 
-AgentExecutor loops are linear: you typically keep a single loop that repeatedly calls the model until “done.” Self-correction with multiple branches (critique → generate, then human approval → either finish or revise) becomes messy and harder to control. LangGraph makes those transitions explicit via edges/routers, so you can reason about control flow and state changes directly.
+In AgentExecutor, control flow is mostly one big loop. Adding a critique step that sometimes goes back to generate, and sometimes waits for human approval, gets messy fast. In LangGraph those paths are just edges, so the loop is clear and easier to debug.
 
-## 3) Human-in-the-loop interrupts
+## 3) Human-in-the-loop
 
-LangGraph can pause execution before a risky node using `interrupt_before`. In this project, the graph pauses before `human_review` (right before final formatting) so you can approve or reject the draft. After you update state (e.g. `human_approved=True/False`), you resume the graph without re-running earlier nodes.
+The graph pauses before `human_review` with `interrupt_before`. After setting `human_approved` to true or false, the run continues from that checkpoint.
 
-**When HITL is needed:** purchases, emails, account changes, or any irreversible/external side effect.  
-**When full autonomy is fine:** read-only lookups, drafting, ranking, and other reversible/internal steps.
+HITL makes sense for risky actions (purchase, email, account changes). Full autonomy is fine for read-only work like lookups and drafting.
 
 ## 4) Persistence & debugging
 
-We use `MemorySaver` as a checkpointer so graph state persists across runs/sessions. You can resume a paused thread and also inspect state history (`get_state_history`) to “time travel” through what happened during a run.
+`MemorySaver` stores state by `thread_id`, so a paused run can be resumed. `get_state_history` shows earlier snapshots for debugging.
 
-## 5) When to use LangChain AgentExecutor vs LangGraph
+## 5) AgentExecutor vs LangGraph
 
-Use **LangChain AgentExecutor** when you want a quick agent loop with tool calling and minimal control-flow complexity. Use **LangGraph** when workflows need explicit state transitions, conditional routing, loops, interrupts, and reliable persistence/debugging across long multi-step tasks.
+AgentExecutor is enough for simple tool-calling agents. LangGraph fits better when the workflow needs branching, retries, interrupts, and saved state.

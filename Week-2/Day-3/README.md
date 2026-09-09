@@ -14,7 +14,12 @@ cd Week-2/Day-3
 pip install -r requirements.txt
 ```
 
-Put `GROQ_API_KEY` in `Week-2/Day-3/.env` (or reuse Day-2/Day-1 `.env`).
+Create a `.env` file with:
+
+```
+GROQ_API_KEY=gsk_...
+GROQ_MODEL=openai/gpt-oss-20b
+```
 
 ## Run
 
@@ -26,9 +31,8 @@ jupyter notebook agent_langgraph.ipynb
 ## Files
 
 - `langgraph_agent.py` — graph nodes, edges, state schema
-- `agent_langgraph.ipynb` — Tasks 1–5 walkthrough + runnable demo
+- `agent_langgraph.ipynb` — Tasks 1–5 notebook
 - `data/products.csv` — catalog used by the `retrieve` node
-- `writeup.md` — 1-page style write-up + comparison
-- `graph_diagram.md` — Mermaid diagram of the final workflow
-- `graph_diagram.png` — PNG flowchart of the final workflow
-
+- `writeup.md` — write-up + comparison
+- `graph_diagram.md` — Mermaid diagram
+- `graph_diagram.png` — PNG flowchart

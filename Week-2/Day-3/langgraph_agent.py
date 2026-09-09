@@ -1,15 +1,11 @@
 """
-Week 2 Day 3 — LangGraph Stateful Agent (conditional edges, cycles, interrupts, persistence).
+Week 2 Day 3 — LangGraph stateful agent.
 
-This file implements a graph workflow over a shared State object:
+Flow:
   plan -> retrieve -> generate -> critique -(loop)-> generate
   critique -> human_review -(interrupt)-> format -> END
 
-We reuse the same "shopping recommendation" domain from Day 2 (products.csv).
-
-Notes:
-  - Uses LangGraph's interrupt_before/interrupt_after via graph.compile(...)
-  - Uses MemorySaver checkpointer for persistence across runs/sessions.
+Uses the products.csv catalog for retrieve.
 """
 
 from __future__ import annotations
@@ -30,7 +26,6 @@ from langgraph.graph import END, START, StateGraph
 BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env", override=True)
 if not os.getenv("GROQ_API_KEY"):
-    # Fall back to Day-1/Day-2 env if user only kept it there
     load_dotenv(BASE_DIR.parent / "Day-2" / ".env", override=True)
     load_dotenv(BASE_DIR.parent / "Day-1" / ".env", override=True)
 
@@ -71,7 +66,7 @@ class ShoppingState(TypedDict, total=False):
 def get_llm(temperature: float = 0) -> ChatGroq:
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
-        raise RuntimeError("GROQ_API_KEY missing. Put it in Week-2/Day-3/.env (or reuse Day-2/.env).")
+        raise RuntimeError("GROQ_API_KEY is missing. Add it to Week-2/Day-3/.env")
     return ChatGroq(model=MODEL, temperature=temperature, api_key=api_key)
 
 
@@ -140,8 +135,8 @@ def retrieve_node(state: ShoppingState) -> dict:
 
 def generate_node(state: ShoppingState) -> dict:
     """
-    We intentionally generate a "weak" first draft when retries==0 to trigger the critique loop.
-    On later passes, we include the full price difference and explicit cheaper recommendation.
+    First draft is short (no prices) so critique can send it back.
+    Later drafts include prices and a clear cheaper recommendation.
     """
     retrieved = state["retrieved"]
     a_name = retrieved["a"]["name"]
@@ -151,7 +146,7 @@ def generate_node(state: ShoppingState) -> dict:
     diff = abs(a_price - b_price)
     cheaper = a_name if a_price <= b_price else b_name
 
-    # "quality" trigger: first pass (before any critique) omits numbers
+    # First pass skips prices so critique can request a rewrite
     if int(state.get("loop_passes", 0)) == 0:
         draft = (
             f"Compare {a_name} vs {b_name} for budget-conscious buying. "
@@ -226,16 +221,13 @@ def critique_router(state: ShoppingState) -> Literal["generate", "human_review"]
 
 
 def critique_router_to_format(state: ShoppingState) -> Literal["generate", "format"]:
-    """Task-3 helper: skip human interrupt and finish when quality is good."""
+    """If quality is good, go to format (no human pause in this graph)."""
     nxt = critique_router(state)
     return "generate" if nxt == "generate" else "format"
 
 
 def human_review_node(state: ShoppingState) -> dict:
-    """
-    This node runs AFTER human_approved is filled in via graph.update_state(...)
-    (because we interrupt before this node).
-    """
+    """Runs after the interrupt; uses human_approved from update_state."""
     approved = state.get("human_approved")
     notes = state.get("human_notes") or ""
 
@@ -270,7 +262,7 @@ def format_node(state: ShoppingState) -> dict:
     approval_txt = (
         "Human approved the recommendation."
         if state.get("human_approved") is True
-        else "Auto-finished (or latest revision after human rejection)."
+        else "Finished without human approval flag."
     )
     formatted = (
         f"FINAL RECOMMENDATION\n\n"
@@ -378,7 +370,6 @@ def get_default_checkpointer() -> MemorySaver:
 
 
 if __name__ == "__main__":
-    # Quick smoke test for the linear graph.
     graph, _ = build_linear_graph()
     init = default_initial_state(
         request="compare",
