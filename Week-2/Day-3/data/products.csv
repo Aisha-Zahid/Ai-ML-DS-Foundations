@@ -1,0 +1,11 @@
+product_id,name,category,price_usd,in_stock
+P001,Wireless Mouse,accessories,18.99,true
+P002,Mechanical Keyboard,accessories,79.50,true
+P003,USB-C Hub,accessories,34.00,true
+P004,Budget Laptop Stand,office,22.00,true
+P005,Premium Laptop Stand,office,65.00,false
+P006,Noise-Cancel Headset,audio,49.99,true
+P007,Studio Headset,audio,129.00,true
+P008,Webcam HD,video,39.95,true
+P009,4K Webcam,video,119.00,true
+P010,Portable SSD 1TB,storage,89.00,true
