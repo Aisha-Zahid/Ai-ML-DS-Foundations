@@ -1,0 +1,7 @@
+crewai>=0.80.0
+litellm>=1.0.0
+langchain-groq>=0.2.0
+groq>=0.11.0
+python-dotenv>=1.0.0
+jupyter>=1.0.0
+nbformat>=5.9.0
