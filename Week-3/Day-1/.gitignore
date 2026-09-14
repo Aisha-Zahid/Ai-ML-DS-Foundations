@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+*.log
+data/raw/*.zip
+# large regenerated table — run: python build_features.py
+data/processed/player_game_features_v1.csv
