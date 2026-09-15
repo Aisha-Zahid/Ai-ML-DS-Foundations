@@ -1,0 +1,26 @@
+feature,value
+num__avg_impact_l5,0.7455723545398832
+num__avg_impact_l3,0.07126053193752767
+num__avg_fantasy_l5,0.04390863215413671
+num__avg_disposals_l3,0.04127443427202731
+num__avg_disposals_l5,0.03543077245944891
+num__games_played_pre,0.02365903150819308
+num__career_game_count,0.01987916111822393
+num__avg_goals_l5,0.009218712294614108
+num__player_rest_days,0.0038273245828855094
+num__avg_fantasy_l3,0.0019788593792863718
+num__avg_goals_l3,0.0018919884672288303
+cat__team_Port Adelaide Power,0.000505536817454531
+cat__team_St Kilda Saints,0.0003861486088051699
+cat__team_Gold Coast Suns,0.00024649288262747524
+cat__team_Greater Western Sydney Giants,0.00024056562263098048
+cat__team_Adelaide Crows,0.0001901591145031145
+cat__team_North Melbourne Kangaroos,0.00013919378282010094
+cat__team_Carlton Blues,9.492147911397116e-05
+cat__team_Fremantle Dockers,7.637094513044175e-05
+cat__team_Essendon Bombers,6.218409579771998e-05
+cat__team_West Coast Eagles,5.333377693773306e-05
+cat__team_Richmond Tigers,5.0276317905111874e-05
+cat__team_Collingwood Magpies,4.330583819053619e-05
+cat__team_Sydney Swans,9.708004627211384e-06
+cat__team_Brisbane Bears,0.0

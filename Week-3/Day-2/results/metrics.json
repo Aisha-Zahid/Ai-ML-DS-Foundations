@@ -1,0 +1,127 @@
+{
+  "match_split": {
+    "holdout_year": 2024,
+    "train_rows": 7472,
+    "holdout_rows": 432,
+    "train_years": [
+      1983,
+      2023
+    ],
+    "holdout_years": [
+      2024,
+      2025
+    ]
+  },
+  "match_baseline_always_home": {
+    "accuracy": 0.5625,
+    "f1": 0.72,
+    "brier": 0.2469844593262384,
+    "roc_auc": 0.5
+  },
+  "match_baseline_higher_ladder": {
+    "accuracy": 0.6388888888888888,
+    "f1": 0.675,
+    "brier": 0.23861111111111113,
+    "roc_auc": 0.6349206349206349
+  },
+  "match_models": {
+    "logreg": {
+      "accuracy": 0.6296296296296297,
+      "f1": 0.6444444444444445,
+      "brier": 0.21746406840696067,
+      "roc_auc": 0.70215777211662
+    },
+    "gbm": {
+      "accuracy": 0.6504629629629629,
+      "f1": 0.713472485768501,
+      "brier": 0.21250884732561118,
+      "roc_auc": 0.7086681037298322
+    }
+  },
+  "match_final": {
+    "name": "gbm",
+    "accuracy": 0.6504629629629629,
+    "f1": 0.713472485768501,
+    "brier": 0.21250884732561118,
+    "roc_auc": 0.7086681037298322
+  },
+  "sniff_tests": [
+    {
+      "match_id": "20240307_SydneySwans_MelbourneDemons",
+      "home_team": "Sydney Swans",
+      "away_team": "Melbourne Demons",
+      "match_date": "2024-03-07",
+      "actual_home_win": 1,
+      "model_p_home": 0.489,
+      "model_pred_home": 0,
+      "ladder_expect_home": 1,
+      "home_ladder_pct_pre": 0.5,
+      "away_ladder_pct_pre": 0.5,
+      "form_margin_diff_l5": -5.2
+    },
+    {
+      "match_id": "20240308_BrisbaneLions_CarltonBlues",
+      "home_team": "Brisbane Lions",
+      "away_team": "Carlton Blues",
+      "match_date": "2024-03-08",
+      "actual_home_win": 0,
+      "model_p_home": 0.645,
+      "model_pred_home": 1,
+      "ladder_expect_home": 1,
+      "home_ladder_pct_pre": 0.5,
+      "away_ladder_pct_pre": 0.5,
+      "form_margin_diff_l5": 26.4
+    },
+    {
+      "match_id": "20240309_GoldCoastSuns_RichmondTigers",
+      "home_team": "Gold Coast Suns",
+      "away_team": "Richmond Tigers",
+      "match_date": "2024-03-09",
+      "actual_home_win": 1,
+      "model_p_home": 0.508,
+      "model_pred_home": 1,
+      "ladder_expect_home": 1,
+      "home_ladder_pct_pre": 0.5,
+      "away_ladder_pct_pre": 0.5,
+      "form_margin_diff_l5": 15.0
+    }
+  ],
+  "player_split": {
+    "holdout_year": 2024,
+    "train_rows": 254207,
+    "holdout_rows": 19872,
+    "train_years": [
+      1983,
+      2023
+    ],
+    "holdout_years": [
+      2024,
+      2025
+    ]
+  },
+  "player_baseline": {
+    "reg_mae": 18.830213365539453,
+    "reg_rmse": 23.908029408836956,
+    "topk5_prev_form": 0.5532407407407407,
+    "topk5_seasonish_avg": 0.5833333333333334,
+    "n_holdout_rows": 19872,
+    "n_holdout_games": 432
+  },
+  "player_model": {
+    "mae": 17.529819739406115,
+    "rmse": 22.21557323113259,
+    "topk5_hit_rate": 0.5648148148148148,
+    "n_holdout_rows": 19872,
+    "n_holdout_games": 432
+  },
+  "player_model_blend": {
+    "mae": 17.72364086128214,
+    "rmse": 22.524726863433862,
+    "topk5_hit_rate": 0.5856481481481481,
+    "blend_model_weight": 0.3
+  },
+  "selection_notes": {
+    "match": "Picked gbm: best holdout ROC AUC, then lower Brier. GBM handles non-linear form better; logreg is easier to read.",
+    "player": "Predict impact_score then rank inside the match. API score uses 0.3 model + 0.7 form average for top-k."
+  }
+}

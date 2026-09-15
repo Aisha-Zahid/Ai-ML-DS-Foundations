@@ -1,0 +1,4 @@
+match_id,home_team,away_team,match_date,actual_home_win,model_p_home,model_pred_home,ladder_expect_home,home_ladder_pct_pre,away_ladder_pct_pre,form_margin_diff_l5
+20240307_SydneySwans_MelbourneDemons,Sydney Swans,Melbourne Demons,2024-03-07,1,0.489,0,1,0.5,0.5,-5.2
+20240308_BrisbaneLions_CarltonBlues,Brisbane Lions,Carlton Blues,2024-03-08,0,0.645,1,1,0.5,0.5,26.4
+20240309_GoldCoastSuns_RichmondTigers,Gold Coast Suns,Richmond Tigers,2024-03-09,1,0.508,1,1,0.5,0.5,15.0
