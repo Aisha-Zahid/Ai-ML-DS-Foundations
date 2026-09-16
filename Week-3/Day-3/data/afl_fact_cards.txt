@@ -1,0 +1,99 @@
+Club card: Adelaide Crows. Appears as home team in dataset years 1991-2025. Home win rate in those home games: 64.5%. Common home venues: AAMI Stadium (263), Adelaide Oval (135). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Brisbane Bears. Appears as home team in dataset years 1987-1996. Home win rate in those home games: 47.4%. Common home venues: People First Stadium (61), The Gabba (49). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Brisbane Lions. Appears as home team in dataset years 1997-2025. Home win rate in those home games: 62.2%. Common home venues: The Gabba (339), Melbourne Cricket Ground (4). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Carlton Blues. Appears as home team in dataset years 1983-2025. Home win rate in those home games: 54.5%. Common home venues: Princes Park (179), Melbourne Cricket Ground (128). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Collingwood Magpies. Appears as home team in dataset years 1983-2025. Home win rate in those home games: 60.4%. Common home venues: Melbourne Cricket Ground (312), Victoria Park (101). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Essendon Bombers. Appears as home team in dataset years 1983-2025. Home win rate in those home games: 63.4%. Common home venues: Melbourne Cricket Ground (194), Marvel Stadium (176). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Fitzroy Lions. Appears as home team in dataset years 1983-1996. Home win rate in those home games: 47.9%. Common home venues: Princes Park (62), Western Oval (24). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Fremantle Dockers. Appears as home team in dataset years 1995-2025. Home win rate in those home games: 58.8%. Common home venues: Domain Stadium (240), Optus Stadium (85). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Geelong Cats. Appears as home team in dataset years 1983-2025. Home win rate in those home games: 73.5%. Common home venues: GMHBA Stadium (359), Melbourne Cricket Ground (75). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Gold Coast Suns. Appears as home team in dataset years 2011-2025. Home win rate in those home games: 43.0%. Common home venues: People First Stadium (141), TIO Stadium (9). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Greater Western Sydney Giants. Appears as home team in dataset years 2012-2025. Home win rate in those home games: 54.1%. Common home venues: ENGIE Stadium (106), Manuka Oval (39). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Hawthorn Hawks. Appears as home team in dataset years 1983-2025. Home win rate in those home games: 67.9%. Common home venues: Melbourne Cricket Ground (197), Waverley Park (125). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Melbourne Demons. Appears as home team in dataset years 1983-2025. Home win rate in those home games: 50.4%. Common home venues: Melbourne Cricket Ground (406), Waverley Park (21). Ask structured tools for exact H2H records or recent scores.
+
+Club card: North Melbourne Kangaroos. Appears as home team in dataset years 1983-2025. Home win rate in those home games: 54.6%. Common home venues: Marvel Stadium (185), Melbourne Cricket Ground (176). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Port Adelaide Power. Appears as home team in dataset years 1997-2025. Home win rate in those home games: 64.0%. Common home venues: AAMI Stadium (192), Adelaide Oval (140). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Richmond Tigers. Appears as home team in dataset years 1983-2025. Home win rate in those home games: 50.7%. Common home venues: Melbourne Cricket Ground (399), Marvel Stadium (43). Ask structured tools for exact H2H records or recent scores.
+
+Club card: St Kilda Saints. Appears as home team in dataset years 1983-2025. Home win rate in those home games: 51.2%. Common home venues: Marvel Stadium (251), Waverley Park (98). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Sydney Swans. Appears as home team in dataset years 1983-2025. Home win rate in those home games: 59.3%. Common home venues: Sydney Cricket Ground (433), Accor Stadium (54). Ask structured tools for exact H2H records or recent scores.
+
+Club card: West Coast Eagles. Appears as home team in dataset years 1987-2025. Home win rate in those home games: 66.7%. Common home venues: Domain Stadium (303), Optus Stadium (87). Ask structured tools for exact H2H records or recent scores.
+
+Club card: Western Bulldogs. Appears as home team in dataset years 1983-2025. Home win rate in those home games: 58.5%. Common home venues: Marvel Stadium (233), Western Oval (123). Ask structured tools for exact H2H records or recent scores.
+
+Player card: Dustin Fletcher (id 45522). Debut 1993-04-02, last listed 2015-05-30. Teams field: {Essendon Bombers}. Height 198 cm, weight 92 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Shaun Burgoyne (id 43488). Debut 2002-04-13, last listed 2021-08-20. Teams field: {Hawthorn Hawks,Port Adelaide Power}. Height 186 cm, weight 89 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Craig Bradley (id 45380). Debut 1986-03-30, last listed 2002-08-09. Teams field: {Carlton Blues}. Height 180 cm, weight 81 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Brent Harvey (id 45576). Debut 1996-08-31, last listed 2016-09-09. Teams field: {North Melbourne Kangaroos}. Height 177 cm, weight 75 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Todd Goldstein (id 43908). Debut 2008-07-12, last listed 2025-08-27. Teams field: {Essendon Bombers,North Melbourne Kangaroos}. Height 201 cm, weight 103 kg. Use season/game tools for exact disposals and goals.
+
+Player card: David Mundy (id 44553). Debut 2005-04-29, last listed 2022-09-10. Teams field: {Fremantle Dockers}. Height 193 cm, weight 94 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Scott Pendlebury (id 44673). Debut 2006-06-02, last listed 2025-09-19. Teams field: {Collingwood Magpies}. Height 191 cm, weight 90 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Robert Harvey (id 45577). Debut 1988-08-06, last listed 2008-09-19. Teams field: {St Kilda Saints}. Height 181 cm, weight 86 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Paul Salmon (id 45852). Debut 1983-03-27, last listed 2002-09-13. Teams field: {Essendon Bombers,Hawthorn Hawks}. Height 205 cm, weight 112 kg. Use season/game tools for exact disposals and goals.
+
+Player card:  Travis Boak  (id 43406). Debut 2007-06-17, last listed 2025-08-22. Teams field: {Port Adelaide Power}. Height 183 cm, weight 85 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Gary Ablett (id 43262). Debut 2002-03-30, last listed 2020-10-24. Teams field: {Geelong Cats,Gold Coast Suns}. Height 182 cm, weight 87 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Lance Franklin (id 43847). Debut 2005-03-26, last listed 2023-07-29. Teams field: {Hawthorn Hawks,Sydney Swans}. Height 199 cm, weight 105 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Dale Morris (id 44532). Debut 2005-04-22, last listed 2019-07-28. Teams field: {Western Bulldogs}. Height 190 cm, weight 91 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Aaron Sandilands (id 44856). Debut 2003-03-30, last listed 2019-08-17. Teams field: {Fremantle Dockers}. Height 211 cm, weight 118 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Kade Simpson (id 44941). Debut 2003-06-08, last listed 2020-09-19. Teams field: {Carlton Blues}. Height 183 cm, weight 75 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Dayne Zorko (id 45307). Debut 2012-05-12, last listed 2025-09-27. Teams field: {Brisbane Lions}. Height 175 cm, weight 78 kg. Use season/game tools for exact disposals and goals.
+
+Player card: John Blakey (id 45361). Debut 1985-08-09, last listed 2002-09-08. Teams field: {Fitzroy Lions,North Melbourne Kangaroos}. Height 187 cm, weight 83 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Tony Lockett (id 45679). Debut 1983-04-16, last listed 2002-06-15. Teams field: {St Kilda Saints,Sydney Swans}. Height 191 cm, weight 104 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Alastair Lynch (id 45695). Debut 1988-04-16, last listed 2004-09-25. Teams field: {Brisbane Bears,Brisbane Lions,Fitzroy Lions}. Height 193 cm, weight 97 kg. Use season/game tools for exact disposals and goals.
+
+Player card:  Tony Liberatore  (id 45672). Debut 1986-06-21, last listed 2002-07-28. Teams field: {Western Bulldogs}. Height 163 cm, weight 77 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Patrick Dangerfield (id 43674). Debut 2008-08-15, last listed 2025-09-26. Teams field: {Adelaide Crows,Geelong Cats}. Height 189 cm, weight 92 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Corey Enright (id 43796). Debut 2001-04-07, last listed 2016-09-22. Teams field: {Geelong Cats}. Height 187 cm, weight 90 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Tom Hawkins (id 44012). Debut 2007-04-07, last listed 2024-06-21. Teams field: {Geelong Cats}. Height 198 cm, weight 103 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Jeremy Howe (id 44097). Debut 2011-06-03, last listed 2025-09-19. Teams field: {Collingwood Magpies,Melbourne Demons}. Height 190 cm, weight 86 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Shannon Hurn (id 44115). Debut 2006-04-28, last listed 2023-08-25. Teams field: {West Coast Eagles}. Height 187 cm, weight 95 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Stefan Martin (id 44375). Debut 2008-06-29, last listed 2022-08-12. Teams field: {Brisbane Lions,Melbourne Demons,Western Bulldogs}. Height 199 cm, weight 104 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Shane Mumford (id 44552). Debut 2008-04-25, last listed 2021-09-02. Teams field: {Geelong Cats,Greater Western Sydney Giants,Sydney Swans}. Height 197 cm, weight 105 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Dane Rampe (id 44745). Debut 2013-03-29, last listed 2025-08-22. Teams field: {Sydney Swans}. Height 187 cm, weight 88 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Taylor Walker (id 45161). Debut 2009-03-27, last listed 2025-09-11. Teams field: {Adelaide Crows}. Height 193 cm, weight 100 kg. Use season/game tools for exact disposals and goals.
+
+Player card: Jarrad Waite (id 45157). Debut 2003-03-29, last listed 2018-08-25. Teams field: {Carlton Blues,North Melbourne Kangaroos}. Height 194 cm, weight 96 kg. Use season/game tools for exact disposals and goals.
