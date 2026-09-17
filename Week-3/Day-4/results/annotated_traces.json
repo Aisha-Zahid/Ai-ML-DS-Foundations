@@ -1,0 +1,140 @@
+{
+  "retrieval": {
+    "query": "What is Geelong Cats head-to-head record versus Richmond Tigers since 2015?",
+    "history": null,
+    "intent": "retrieval",
+    "route": "retrieve",
+    "teams": [
+      "Richmond Tigers",
+      "Geelong Cats"
+    ],
+    "tool_name": "get_team_h2h_record",
+    "tool_result": {
+      "team_a": "Richmond Tigers",
+      "team_b": "Geelong Cats",
+      "games": 17,
+      "team_a_wins": 7,
+      "team_b_wins": 10,
+      "draws": 0,
+      "year_min": 2015,
+      "year_max": 2025,
+      "source": "match_features_v1 (exact row counts)"
+    },
+    "tool_error": "",
+    "trace": [
+      "[router] intent=retrieval route=retrieve teams=['Richmond Tigers', 'Geelong Cats']",
+      "[retrieve] start",
+      "[retrieve] h2h ok=True",
+      "[validate] ok",
+      "[format] h2h"
+    ],
+    "final_response": "Head-to-head (exact table): Richmond Tigers vs Geelong Cats — 17 games, Richmond Tigers wins 7, Geelong Cats wins 10, draws 0 (2015–2025).",
+    "annotation": "Router chose retrieve → H2H tool → validate ok → exact counts in format."
+  },
+  "predict_match_named": {
+    "query": "Predict Geelong Cats vs Richmond Tigers on 2024-05-01",
+    "history": null,
+    "intent": "prediction_match",
+    "route": "predict_match",
+    "teams": [
+      "Richmond Tigers",
+      "Geelong Cats"
+    ],
+    "tool_name": "predict_match_winner",
+    "tool_result": {
+      "match_id": "20240601_GeelongCats_RichmondTigers",
+      "match_date": "2024-06-01",
+      "home_team": "Geelong Cats",
+      "away_team": "Richmond Tigers",
+      "winner": "Geelong Cats",
+      "home_win_probability": 0.9037,
+      "away_win_probability": 0.0963,
+      "drivers": [
+        "form margin diff (L5) = 50.0",
+        "ladder % diff = 0.55",
+        "prior H2H home win rate = 0.40"
+      ],
+      "fixture": {
+        "match_id": "20240601_GeelongCats_RichmondTigers",
+        "match_date": "2024-06-01",
+        "home_team": "Geelong Cats",
+        "away_team": "Richmond Tigers",
+        "year": 2024,
+        "round": "12"
+      }
+    },
+    "tool_error": "",
+    "trace": [
+      "[router] intent=prediction_match route=predict_match teams=['Richmond Tigers', 'Geelong Cats']",
+      "[predict_match] Geelong Cats vs Richmond Tigers 2024-06-01 p_home=0.9037",
+      "[validate] ok",
+      "[format] prediction_match"
+    ],
+    "final_response": "Prediction (not certain): Geelong Cats is the more likely winner for Geelong Cats vs Richmond Tigers on 2024-06-01. Model home-win probability about 90.4% (away about 9.6%). Main pre-match signals: form margin diff (L5) = 50.0; ladder % diff = 0.55; prior H2H home win rate = 0.40. Treat this as a probabilistic tip from historical form features, not a guarantee. Fixture round in data: 12.",
+    "annotation": "Router chose predict_match → fixture resolve → Day-2 probs + drivers + not-certain framing."
+  },
+  "off_topic": {
+    "query": "What's the best pizza topping?",
+    "history": null,
+    "intent": "off_topic",
+    "route": "refuse",
+    "teams": [],
+    "tool_name": null,
+    "tool_result": {},
+    "tool_error": "",
+    "trace": [
+      "[router] intent=off_topic route=refuse teams=[]",
+      "[refuse] off-topic",
+      "[format] already set"
+    ],
+    "final_response": "I'm built for AFL chat, stats lookups, and match/player predictions only. Ask about a club, a player, a record, or who might win a matchup.",
+    "annotation": "Router chose refuse → no tools → domain refusal message."
+  },
+  "multiturn_followup": {
+    "query": "Who wins that matchup?",
+    "history": [
+      {
+        "role": "user",
+        "content": "Pies vs Cats tip on 2024-03-15"
+      }
+    ],
+    "intent": "prediction_match",
+    "route": "predict_match",
+    "teams": [
+      "Collingwood Magpies",
+      "Geelong Cats"
+    ],
+    "tool_name": "predict_match_winner",
+    "tool_result": {
+      "match_id": "20240712_CollingwoodMagpies_GeelongCats",
+      "match_date": "2024-07-12",
+      "home_team": "Collingwood Magpies",
+      "away_team": "Geelong Cats",
+      "winner": "Geelong Cats",
+      "home_win_probability": 0.4602,
+      "away_win_probability": 0.5398,
+      "drivers": [
+        "form margin diff (L5) = -7.0",
+        "ladder % diff = -0.06",
+        "prior H2H home win rate = 0.40"
+      ],
+      "fixture": {
+        "match_id": "20240712_CollingwoodMagpies_GeelongCats",
+        "match_date": "2024-07-12",
+        "home_team": "Collingwood Magpies",
+        "away_team": "Geelong Cats",
+        "year": 2024,
+        "round": "18"
+      }
+    },
+    "tool_error": "",
+    "trace": [
+      "[router] intent=prediction_match route=predict_match teams=['Collingwood Magpies', 'Geelong Cats']",
+      "[predict_match] Collingwood Magpies vs Geelong Cats 2024-07-12 p_home=0.4602",
+      "[validate] ok",
+      "[format] prediction_match"
+    ],
+    "final_response": "Prediction (not certain): Geelong Cats is the more likely winner for Collingwood Magpies vs Geelong Cats on 2024-07-12. Model home-win probability about 46.0% (away about 54.0%). Main pre-match signals: form margin diff (L5) = -7.0; ladder % diff = -0.06; prior H2H home win rate = 0.40. Treat this as a probabilistic tip from historical form features, not a guarantee. Fixture round in data: 18.",
+    "annotation": "Prior turn supplied clubs/date; follow-up resolved teams and tipped with probabilities."
+  }
+}
