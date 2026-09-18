@@ -36,6 +36,15 @@ OFFTOPIC_PAT = re.compile(
     r"travel agent|bitcoin|super bowl|premier league)\b",
     re.I,
 )
+INJECTION_PAT = re.compile(
+    r"(ignore (all )?(previous|prior|above) (instructions|rules|prompts)|"
+    r"disregard (your|the) (system|instructions)|"
+    r"you are now |jailbreak|developer mode|"
+    r"override (your|the) (scope|rules|guardrails)|"
+    r"act as (a |an )?(unrestricted|general|dan)|"
+    r"do not (stay|remain) (in |an )?afl)",
+    re.I,
+)
 AFL_HINT = re.compile(
     r"\b(afl|footy|geelong|collingwood|pies|cats|swans|tigers|bulldogs|"
     r"disposal|mark|behind|brownlow|premiership)\b",
@@ -47,6 +56,10 @@ def classify_intent(query: str) -> Intent:
     q = (query or "").strip()
     if not q:
         return "ambiguous"
+
+    # Prompt-injection / scope override attempts → refuse
+    if INJECTION_PAT.search(q):
+        return "off_topic"
 
     # Vague tipping asks need clarification, not a hard refuse
     if re.fullmatch(r"(who wins\??|who will win\??|predict( the)? winner\??)", q, re.I):

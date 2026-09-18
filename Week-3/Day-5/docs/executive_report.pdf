@@ -1,0 +1,117 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 5 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+5 0 obj
+<< /Length 2515 >>
+stream
+BT /F1 10 Tf 50 800 Td 12 TL
+(EXECUTIVE REPORT ? AFL CHAT & PREDICTION ASSISTANT) Tj
+T* () Tj
+T* (**Audience:** stakeholders / client property owners) Tj
+T* (**Length:** ~2 pages) Tj
+T* (**Product:** Domain-locked AFL assistant \(chat + retrieval + probabilistic tips\)) Tj
+T* () Tj
+T* (1. PRODUCT GOAL) Tj
+T* () Tj
+T* (Ship a demo-ready AFL assistant that answers factual club/player questions from tables,) Tj
+T* (tips match winners and top-impact players with explicit probabilities, and refuses) Tj
+T* (off-topic or jailbreak prompts ? suitable for a Web3Geeks-style showcase or client embed) Tj
+T* (behind an API/UI.) Tj
+T* () Tj
+T* (2. ARCHITECTURE) Tj
+T* () Tj
+T* (```) Tj
+T* (User ? FastAPI / Streamlit ? Day-5 hardened wrapper) Tj
+T* (         ? abuse / rate checks ? timed LangGraph \(Day-4\)) Tj
+T* (              router ? retrieve | predict_match | predict_player | refuse | clarify) Tj
+T* (                   ? validate ? format \(disclaimer on all tips\)) Tj
+T* (         ? JSONL monitoring log) Tj
+T* (```) Tj
+T* () Tj
+T* (- **Retrieval** reuses Day-3 table tools \(H2H, recent form, player season\).) Tj
+T* (- **Prediction** calls Day-2 `predict_match_winner` / `predict_top_player` after nickname) Tj
+T* (+ fixture resolve.) Tj
+T* (- **LangGraph routing** is explicit so tips always go through the prediction node) Tj
+T* (\(probabilities + drivers + ?predicted probability, not a certainty?\), instead of a) Tj
+T* (free-form agent inventing odds.) Tj
+T* () Tj
+T* (3. EVALUATION RESULTS) Tj
+T* () Tj
+T* (From the Day-5 capstone suite \(`results/capstone_eval.md`\) and Day-2 holdout metrics:) Tj
+T* () Tj
+T* (- **Combined suite:** **28 cases**, overall **~96?100%** pass after multi-turn hardening;) Tj
+T* (categories cover factual Q&A, prediction framing/sanity, guardrails \(4/4 prompt-injection) Tj
+T* (holds\), and multi-turn coherence.) Tj
+T* (- **Weakest category:** conversational coherence \(entity carry-over on short follow-ups\)) Tj
+T* (? mitigated by classifying follow-up intent separately and seeding prior user turns only.) Tj
+T* (- **Match model context:** Day-2 GBM holdout accuracy **65.0%**, ROC AUC **0.71**, vs) Tj
+T* (higher-ladder naive baseline **63.9%** / **0.63** AUC \(+1.2pp accuracy, +0.07 AUC\).) Tj
+T* (Always-home baseline **56.2%**.) Tj
+T* () Tj
+T* (4. KNOWN LIMITATIONS) Tj
+T* () Tj
+T* (Limitation   Impact   Mitigation) Tj
+T* (------------ -------- ------------) Tj
+T* (Data recency   Tips use historical feature dump, not live odds   Weekly feature refresh) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 7 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 1249 >>
+stream
+BT /F1 10 Tf 50 800 Td 12 TL
+(after each round) Tj
+T* (Accuracy ceiling   ~65% holdout; close games stay near 50%   Always show probabilities +) Tj
+T* (disclaimer) Tj
+T* (Guardrail edge cases   Novel jailbreaks / blended AFL+off-topic   Expand injection) Tj
+T* (patterns; refuse-first) Tj
+T* (Cold-start latency   First tip loads joblib + large CSVs   Cache models at API startup;) Tj
+T* (timeouts) Tj
+T* (Player tips   Rank by impact composite, not named fantasy   Label clearly; optional name) Tj
+T* (join later) Tj
+T* () Tj
+T* (5. RECOMMENDED NEXT STEPS) Tj
+T* () Tj
+T* (1. Preload Day-2 artifacts in FastAPI lifespan to cut p95 latency.) Tj
+T* (2. Join player display names into top-player responses.) Tj
+T* (3. Persist tips + actuals for live drift dashboards.) Tj
+T* (4. Add auth + per-IP rate limits before public internet exposure.) Tj
+T* (5. Optional: light LLM rewrite *after* tools, still forbidden from changing refuse/tip) Tj
+T* (math.) Tj
+T* () Tj
+T* (BOTTOM LINE) Tj
+T* () Tj
+T* (The system is **demo-ready**: factual lookups, probabilistic tips with consistent) Tj
+T* (disclaimers, injection refusals, API + Streamlit UI, and an ops checklist for) Tj
+T* (round-by-round refresh. Treat tips as decision support, not guarantees.) Tj
+ET
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000317 00000 n 
+0000002884 00000 n 
+0000003010 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+4311
+%%EOF

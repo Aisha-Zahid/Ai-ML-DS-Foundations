@@ -1,0 +1,6 @@
+category,n,passed,pass_rate
+coherence,5,5,1.0
+factual,8,8,1.0
+guardrail,7,7,1.0
+prediction,7,7,1.0
+prediction_sanity,1,1,1.0

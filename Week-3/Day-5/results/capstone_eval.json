@@ -1,0 +1,47 @@
+{
+  "n_cases": 28,
+  "overall_pass_rate": 1.0,
+  "by_category": [
+    {
+      "category": "coherence",
+      "n": 5,
+      "passed": 5,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "factual",
+      "n": 8,
+      "passed": 8,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "guardrail",
+      "n": 7,
+      "passed": 7,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "prediction",
+      "n": 7,
+      "passed": 7,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "prediction_sanity",
+      "n": 1,
+      "passed": 1,
+      "pass_rate": 1.0
+    }
+  ],
+  "weakest_category": {
+    "category": "coherence",
+    "n": 5,
+    "passed": 5,
+    "pass_rate": 1.0
+  },
+  "proposed_improvement": "All categories passed; keep investing in multi-turn coherence (short follow-ups) \u2014 historically the fragile path.",
+  "prompt_injection_tests": {
+    "passed": 4,
+    "n": 4
+  }
+}

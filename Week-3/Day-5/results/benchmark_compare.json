@@ -1,0 +1,24 @@
+{
+  "rows": [
+    {
+      "model": "Always-home baseline",
+      "accuracy": 0.5625,
+      "roc_auc": 0.5,
+      "brier": 0.247
+    },
+    {
+      "model": "Higher-ladder (naive public-style)",
+      "accuracy": 0.6389,
+      "roc_auc": 0.6349,
+      "brier": 0.2386
+    },
+    {
+      "model": "Day-2 GBM (gbm)",
+      "accuracy": 0.6505,
+      "roc_auc": 0.7087,
+      "brier": 0.2125
+    }
+  ],
+  "delta_acc_vs_ladder": 0.01157407407407407,
+  "delta_auc_vs_ladder": 0.07374746880919736
+}

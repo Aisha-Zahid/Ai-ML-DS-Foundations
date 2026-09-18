@@ -20,6 +20,13 @@ from .services import (
 )
 
 
+# Consistent prediction framing (Day-5 hardening)
+PREDICTION_DISCLAIMER = (
+    "Predicted probability, not a certainty — treat this as a model tip from "
+    "historical form features, not a guarantee."
+)
+
+
 class AFLState(TypedDict, total=False):
     user_query: str
     history: list
@@ -45,7 +52,19 @@ def _trace(state: AFLState, msg: str) -> list:
 
 def router_node(state: AFLState) -> dict:
     q = state.get("user_query") or ""
-    intent = classify_intent(q)
+    # Multi-turn: intent from the follow-up line; entities from the full text
+    intent_q = q
+    if "User follow-up:" in q:
+        intent_q = q.split("User follow-up:")[-1].strip() or q
+    intent = classify_intent(intent_q)
+    # If follow-up is a thin tip ask, force prediction when prior named clubs+tip
+    if (
+        intent in {"ambiguous", "factual", "retrieval"}
+        and "User follow-up:" in q
+        and re.search(r"\b(who wins|tip|predict|winner|matchup)\b", intent_q, re.I)
+        and re.search(r"\b(tip|predict|beat|vs)\b", q, re.I)
+    ):
+        intent = "prediction_match"
     route = route_target(intent)
     a, b = extract_two_teams(q)
     teams = [t for t in (a, b) if t]
@@ -364,12 +383,12 @@ def format_node(state: AFLState) -> dict:
         p_home = float(p_home)
         p_away = float(result.get("away_win_probability") or (1 - p_home))
         resp = (
-            f"Prediction (not certain): {winner} is the more likely winner for "
+            f"Prediction: {winner} is the more likely winner for "
             f"{home} vs {away} on {result.get('match_date')}. "
             f"Model home-win probability about {p_home:.1%} "
             f"(away about {p_away:.1%}). "
             f"Main pre-match signals: {'; '.join(drivers)}. "
-            "Treat this as a probabilistic tip from historical form features, not a guarantee."
+            f"{PREDICTION_DISCLAIMER}"
         )
         if fix.get("round"):
             resp += f" Fixture round in data: {fix['round']}."
@@ -385,9 +404,9 @@ def format_node(state: AFLState) -> dict:
         ]
         resp = (
             f"Top-player ranking for {result.get('match_date')} "
-            f"({result.get('n_players_scored', '?')} players scored). "
-            "Probabilistic / model-based ranks — not certain.\n"
+            f"({result.get('n_players_scored', '?')} players scored).\n"
             + "\n".join(lines)
+            + f"\n{PREDICTION_DISCLAIMER}"
         )
         return {"final_response": resp, "trace": _trace(state, "[format] prediction_player")}
 
