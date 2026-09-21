@@ -1,0 +1,20 @@
+%%{init: {'theme': 'neutral'}}%%
+flowchart LR
+  Caller[Caller phone] --> Tel[Telephony gateway]
+  Tel -->|audio stream| STT[STT Deepgram]
+  STT -->|partial/final text| Orchestrator[LangGraph agent]
+  Orchestrator --> Mem[Conversation + profile memory]
+  Orchestrator --> Intent[Intent router]
+  Intent --> RAG[RAG vector store]
+  Intent --> SQL[Structured property DB]
+  Intent --> Tools[Tools: Calendar Email CRM]
+  RAG --> Orchestrator
+  SQL --> Orchestrator
+  Tools --> Orchestrator
+  Orchestrator -->|reply text UrduLish| TTS[Fish Audio TTS]
+  TTS -->|audio stream| Tel
+  Tel --> Caller
+  Tools --> n8n[n8n workflows]
+  n8n --> Cal[Google Calendar]
+  n8n --> Mail[Gmail / Resend]
+  n8n --> CRM[CRM / Postgres]
