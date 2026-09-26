@@ -1,0 +1,142 @@
+{
+  "name": "RealEstate Hub — Call to CRM",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "voice-lead",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook_in",
+      "name": "Webhook Call Ingest",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Normalize payload from voice agent\nconst b = items[0].json.body || items[0].json;\nreturn [{ json: {\n  intent: b.intent || 'buy',\n  client_name: b.client_name,\n  client_phone: b.client_phone,\n  city: b.city,\n  preferences: b.preferences || {},\n  property: b.property || {},\n  when_text: b.when_text,\n  transcript: b.transcript || [],\n  requirements: b.requirements || ''\n}}];"
+      },
+      "id": "intent_normalize",
+      "name": "Intent Detect / Normalize",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.property.status}}",
+              "operation": "equal",
+              "value2": "available"
+            }
+          ]
+        }
+      },
+      "id": "property_gate",
+      "name": "Property Available?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Call FastAPI / internal booking endpoint with retries handled by Error Trigger\nreturn items;"
+      },
+      "id": "appointment_prep",
+      "name": "Appointment Prep",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [680, -80]
+    },
+    {
+      "parameters": {
+        "url": "http://host.docker.internal:8000/internal/book",
+        "method": "POST",
+        "jsonParameters": true,
+        "options": {
+          "timeout": 30000
+        },
+        "bodyParametersJson": "={{JSON.stringify($json)}}"
+      },
+      "id": "http_book",
+      "name": "Book Calendar+Email+CRM",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [900, -80],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 1000
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "error",
+              "value": "Property unavailable or missing match"
+            }
+          ]
+        }
+      },
+      "id": "fail_property",
+      "name": "Fail — No Property",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [680, 120]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "respond_ok",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1120, -80]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "respond_fail",
+      "name": "Respond Failure",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [900, 120]
+    }
+  ],
+  "connections": {
+    "Webhook Call Ingest": {
+      "main": [[{ "node": "Intent Detect / Normalize", "type": "main", "index": 0 }]]
+    },
+    "Intent Detect / Normalize": {
+      "main": [[{ "node": "Property Available?", "type": "main", "index": 0 }]]
+    },
+    "Property Available?": {
+      "main": [
+        [{ "node": "Appointment Prep", "type": "main", "index": 0 }],
+        [{ "node": "Fail — No Property", "type": "main", "index": 0 }]
+      ]
+    },
+    "Appointment Prep": {
+      "main": [[{ "node": "Book Calendar+Email+CRM", "type": "main", "index": 0 }]]
+    },
+    "Book Calendar+Email+CRM": {
+      "main": [[{ "node": "Respond Success", "type": "main", "index": 0 }]]
+    },
+    "Fail — No Property": {
+      "main": [[{ "node": "Respond Failure", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "description": "Call → Intent → Property Match → Appointment → Calendar → Email → CRM. HTTP book step retries 3x."
+  }
+}

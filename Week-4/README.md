@@ -12,4 +12,4 @@ Production-style UrduLish voice agent for real estate: calls, RAG, recommendatio
 | 6 | Eval + security | `Day-6/` |
 | 7 | Deploy + client handover | `Day-7/` |
 
-Docs: [`Day-1`](Day-1/README.md) · [`Day-2`](Day-2/README.md) · [`Day-3`](Day-3/README.md)
+Docs: [`Day-1`](Day-1/README.md) · [`Day-2`](Day-2/README.md) · [`Day-3`](Day-3/README.md) · [`Day-4`](Day-4/README.md)
