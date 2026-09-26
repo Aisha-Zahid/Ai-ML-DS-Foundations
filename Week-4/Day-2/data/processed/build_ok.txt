@@ -1,0 +1,2 @@
+default_chunk=medium_800
+variants=['small_400', 'medium_800', 'large_1200']

@@ -1,0 +1,23 @@
+{
+  "small_400": {
+    "chunk_size": 400,
+    "n_docs": 6,
+    "n_chunks": 18,
+    "avg_chunk_chars": 296.7,
+    "index_dir": "D:\\Netixsol\\Week-4\\Day-2\\vectorstore\\tfidf_small_400"
+  },
+  "medium_800": {
+    "chunk_size": 800,
+    "n_docs": 6,
+    "n_chunks": 9,
+    "avg_chunk_chars": 517.7,
+    "index_dir": "D:\\Netixsol\\Week-4\\Day-2\\vectorstore\\tfidf_medium_800"
+  },
+  "large_1200": {
+    "chunk_size": 1200,
+    "n_docs": 6,
+    "n_chunks": 8,
+    "avg_chunk_chars": 572.4,
+    "index_dir": "D:\\Netixsol\\Week-4\\Day-2\\vectorstore\\tfidf_large_1200"
+  }
+}

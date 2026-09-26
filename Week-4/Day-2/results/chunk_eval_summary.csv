@@ -1,0 +1,4 @@
+variant,chunk_size,hit_rate,hits,n
+small_400,400,1.0,8,8
+medium_800,800,1.0,8,8
+large_1200,1200,1.0,8,8

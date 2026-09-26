@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+vectorstore/
+data/processed/*.sqlite
+.DS_Store

@@ -1,0 +1,4 @@
+payment_plan_id,name,summary
+PP-CASH,Cash / bank transfer,Full payment on token + remaining on transfer. No installment markup.
+PP-BAHRIA-36,Bahria 36-month plan,"Typical 10-20% booking, remaining over up to 36 months as per precinct schedule. Exact schedule in brochure."
+PP-RENT-STD,Standard rental,Usually 1-2 months advance + 1 month security. Utilities separate unless stated furnished package.

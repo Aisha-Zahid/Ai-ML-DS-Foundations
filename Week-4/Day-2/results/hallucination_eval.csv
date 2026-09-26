@@ -1,0 +1,62 @@
+id,category,question,route,must_ok,forbid_ok,grounded,retrieval_ok,hallucinated,pass,sources,answer_preview
+Q01,structured_price,What is the price of KR-DHA-8-001?,structured,True,True,True,True,False,True,sql:properties:KR-DHA-8-001,"From inventory: KR-DHA-8-001: DHA Phase 8 — 200 sq yd house | Karachi / DHA Phase 8 | 3 bed | 200 sq_yd | 3.2 crore | status=available. Agent: Bilal Khan (AGT-02, +92-300-1110002). Developer: Defence Housing Authority."
+Q02,availability,Is KR-SOLD-001 available?,structured,True,True,True,True,False,True,sql:properties:KR-SOLD-001,KR-SOLD-001 (DHA Phase 2 — sold example (unavailable)) status is **sold**. Listed price: 7 crore.
+Q03,recommend,Recommend buy options in Karachi under 3 crore,structured,True,True,True,True,False,True,sql:properties:KR-BAH-002|sql:properties:KR-BAH-001|sql:properties:KR-DHA-8-001|sql:properties:KR-CLT-001|sql:properties:KR-DHA-6-002,"Inventory matches:
+KR-BAH-002: Bahria Town Karachi — Precinct 2 plot 125 sq yd | Karachi / Bahria Town | 0 bed | 125 sq_yd | 1.25 crore | status=available
+KR-BAH-001: Bahria Town Karachi — Precinct 10 apartment | Karachi"
+Q04,structured_search,DHA Phase 6 Karachi houses price options available,structured,True,True,True,True,False,True,sql:properties:KR-DHA-6-002|sql:properties:KR-DHA-6-001,"Inventory matches:
+KR-DHA-6-002: DHA Phase 6 — 300 sq yd house | Karachi / DHA Phase 6 | 4 bed | 300 sq_yd | 5.5 crore | status=available
+KR-DHA-6-001: DHA Phase 6 — 500 sq yd house | Karachi / DHA Phase 6 | 5 bed | 500 "
+Q05,agent,Who is the agent for Bahria Town Karachi apartment KR-BAH-001?,structured,True,True,True,True,False,True,sql:properties:KR-BAH-001,"From inventory: KR-BAH-001: Bahria Town Karachi — Precinct 10 apartment | Karachi / Bahria Town | 3 bed | 1600 sq_ft | 2.2 crore | status=available. Agent: Hina Malik (AGT-03, +92-300-1110003). Developer: Bahria Town."
+Q06,rag_payment,Bahria 36 month payment plan details,rag,True,True,True,True,False,True,rag:payment_plans.md#payment_plans.md:::0|rag:brochures/bahria_karachi_apt.md#brochures/bahria_karachi_apt.md:::0|rag:faqs.md#faqs.md:::1|rag:payment_plans.md#payment_plans.md:::1,"Based on company documents (not invented):
+# Payment plans (detailed)
+
+## PP-CASH — Cash / bank transfer
+Best for ready houses in DHA and private buildings. Timeline: token → agreement → remaining payment → transfer.
+No "
+Q07,guardrail,Do you guarantee ROI on Bahria plots?,rag,True,True,True,True,False,True,rag:faqs.md#faqs.md:::1|rag:brochures/bahria_karachi_apt.md#brochures/bahria_karachi_apt.md:::0|rag:payment_plans.md#payment_plans.md:::0|rag:faqs.md#faqs.md:::0,"Based on company documents (not invented):
+attorney guidance. We do not give legal advice; use a registered lawyer for POA.
+
+## ROI / investment returns
+RealEstate Hub does not guarantee investment returns. We only share"
+Q08,rag_location,Schools near DHA Phase 6 Karachi,rag,True,True,True,True,False,True,rag:locations.md#locations.md:::0|rag:locations.md#locations.md:::1|rag:brochures/dha_phase6_house.md#brochures/dha_phase6_house.md:::0|rag:payment_plans.md#payment_plans.md:::1,"Based on company documents (not invented):
+# Locations & nearby facilities
+
+## Karachi — DHA Phase 6
+Prime residential. Near commercial lanes, parks, and good schools (Beaconhouse DHA, City School DHA). Hospitals: South "
+Q09,rent,Rental apartment Gulshan Karachi monthly rent,structured,True,True,True,True,False,True,sql:properties:KR-RENT-002,"Inventory matches:
+KR-RENT-002: Gulshan-e-Iqbal — 2 bed rental apartment | Karachi / Gulshan-e-Iqbal | 2 bed | 1100 sq_ft | 95,000 / month | status=available"
+Q10,commercial,Islamabad G-11 office price,structured,True,True,True,True,False,True,sql:properties:ISB-G11-001,"Inventory matches:
+ISB-G11-001: G-11 Markaz — office space 1500 sq ft | Islamabad / G-11 | 0 bed | 1500 sq_ft | 2.8 crore | status=available"
+Q11,size,Johar Town commercial shop size,structured,True,True,True,True,False,True,sql:properties:LH-JOH-001,"Inventory matches:
+LH-JOH-001: Johar Town — commercial shop 2 marla | Lahore / Johar Town | 0 bed | 2 marla | 3.5 crore | status=available"
+Q12,faq,What documents needed to buy a house?,rag,True,True,True,True,False,True,rag:faqs.md#faqs.md:::1|rag:payment_plans.md#payment_plans.md:::0|rag:payment_plans.md#payment_plans.md:::1|rag:locations.md#locations.md:::1,"Based on company documents (not invented):
+attorney guidance. We do not give legal advice; use a registered lawyer for POA.
+
+## ROI / investment returns
+RealEstate Hub does not guarantee investment returns. We only share"
+Q13,recommend_invest,Suggest investment plot in Bahria Karachi under 2 crore,structured,True,True,True,True,False,True,sql:properties:KR-BAH-002|sql:properties:KR-BAH-001,"Inventory matches:
+KR-BAH-002: Bahria Town Karachi — Precinct 2 plot 125 sq yd | Karachi / Bahria Town | 0 bed | 125 sq_yd | 1.25 crore | status=available
+KR-BAH-001: Bahria Town Karachi — Precinct 10 apartment | Karachi"
+Q14,structured_price,Clifton sea view apartment price,structured,True,True,True,True,False,True,sql:properties:KR-CLT-001,"Inventory matches:
+KR-CLT-001: Clifton Block 5 — sea-view apartment | Karachi / Clifton | 3 bed | 2200 sq_ft | 4.8 crore | status=available"
+Q15,rag_brochure,Shahrah-e-Faisal showroom which agent desk,rag,True,True,True,True,False,True,rag:brochures/commercial_faisal.md#brochures/commercial_faisal.md:::0|rag:faqs.md#faqs.md:::0|rag:locations.md#locations.md:::0,"Based on company documents (not invented):
+# Brochure — Shahrah-e-Faisal showroom
+
+High-visibility commercial frontage on Shahrah-e-Faisal. Suitable for auto, electronics, or brand outlets.
+Size example: 4000 sq ft showr"
+Q16,rent,F-7 Islamabad 3 bed rent how much,structured,True,True,True,True,False,True,sql:properties:ISB-F7-RENT,"Inventory matches:
+ISB-F7-RENT: F-7 — 3 bed apartment rental | Islamabad / F-7 | 3 bed | 1800 sq_ft | 2.2 lakh / month | status=available"
+Q17,faq,What is maintenance policy for Bahria apartments?,rag,True,True,True,True,False,True,rag:brochures/bahria_karachi_apt.md#brochures/bahria_karachi_apt.md:::0|rag:payment_plans.md#payment_plans.md:::0|rag:payment_plans.md#payment_plans.md:::1|rag:faqs.md#faqs.md:::1,"Based on company documents (not invented):
+# Brochure — Bahria Town Karachi apartments
+
+Bahria apartments suit buyers who prefer gated living with gym, parks, and installment plans.
+Precinct 10 sample: ~1600 sq ft, 3 bed"
+Q18,structured_price,Lahore DHA Phase 5 1 kanal house price,structured,True,True,True,True,False,True,sql:properties:LH-DHA-R-001,"Inventory matches:
+LH-DHA-R-001: DHA Lahore Phase 5 — 1 kanal house | Lahore / DHA Phase 5 | 5 bed | 1 kanal | 9.5 crore | status=available"
+Q19,abstain,What is the secret internal commission percentage for agents?,abstain,True,True,True,True,False,True,,I don't have that in the RealEstate Hub knowledge base (no internal commission or secret data on this line). I can connect you to a human agent instead of guessing.
+Q20,faq,Overseas client POA guidance,rag,True,True,True,True,False,True,rag:faqs.md#faqs.md:::0|rag:faqs.md#faqs.md:::1|rag:payment_plans.md#payment_plans.md:::1|rag:locations.md#locations.md:::1,"Based on company documents (not invented):
+# RealEstate Hub — FAQs
+
+## Token money
+Token amount depends on property. For DHA houses it is often negotiated (commonly a few lakhs to a percentage). Always confirm with the a"

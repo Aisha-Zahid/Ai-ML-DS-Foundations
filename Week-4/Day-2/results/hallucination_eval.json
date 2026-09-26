@@ -1,0 +1,8 @@
+{
+  "n": 20,
+  "grounding_rate": 1.0,
+  "retrieval_accuracy": 1.0,
+  "hallucination_rate": 0.0,
+  "pass_rate": 1.0,
+  "passed": 20
+}

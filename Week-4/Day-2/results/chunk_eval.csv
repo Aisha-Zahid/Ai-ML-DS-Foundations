@@ -1,0 +1,25 @@
+variant,query,ok,found,top_sources,top_score
+small_400,Does RealEstate Hub guarantee ROI?,True,does not guarantee;investment returns,faqs.md;payment_plans.md;payment_plans.md,0.2137
+small_400,Bahria 36 month payment plan booking percent,True,10%;20%;36,payment_plans.md;brochures/bahria_karachi_apt.md;faqs.md,0.3459
+small_400,DHA Phase 6 schools and hospitals,True,Beaconhouse;South City,brochures/dha_phase6_house.md;locations.md;locations.md,0.3492
+small_400,Shahrah-e-Faisal showroom size,True,4000;showroom,brochures/commercial_faisal.md,0.4678
+small_400,Rental advance and security deposit,True,1–2 months;security;1 month,payment_plans.md;faqs.md;locations.md,0.2573
+small_400,Bahria Town Karachi apartment precinct 10,True,Precinct 10;1600,brochures/bahria_karachi_apt.md;payment_plans.md;locations.md,0.2795
+small_400,Islamabad G-11 office nearby hospital,True,PIMS;G-11,locations.md;locations.md;brochures/dha_phase6_house.md,0.2555
+small_400,Overseas clients power of attorney,True,power-of-attorney;lawyer,faqs.md;faqs.md;locations.md,0.2771
+medium_800,Does RealEstate Hub guarantee ROI?,True,does not guarantee;investment returns,faqs.md;payment_plans.md;faqs.md,0.1624
+medium_800,Bahria 36 month payment plan booking percent,True,10%;20%;36,payment_plans.md;brochures/bahria_karachi_apt.md;faqs.md,0.2819
+medium_800,DHA Phase 6 schools and hospitals,True,Beaconhouse;South City,locations.md;brochures/dha_phase6_house.md;locations.md,0.3149
+medium_800,Shahrah-e-Faisal showroom size,True,4000;showroom,brochures/commercial_faisal.md,0.4672
+medium_800,Rental advance and security deposit,True,1–2 months;security;1 month,payment_plans.md;faqs.md;locations.md,0.2588
+medium_800,Bahria Town Karachi apartment precinct 10,True,Precinct 10;1600,brochures/bahria_karachi_apt.md;payment_plans.md;locations.md,0.2605
+medium_800,Islamabad G-11 office nearby hospital,True,PIMS;G-11,locations.md;brochures/dha_phase6_house.md;payment_plans.md,0.2383
+medium_800,Overseas clients power of attorney,True,power-of-attorney;lawyer,faqs.md;locations.md;faqs.md,0.1969
+large_1200,Does RealEstate Hub guarantee ROI?,True,does not guarantee;investment returns,faqs.md;payment_plans.md,0.1694
+large_1200,Bahria 36 month payment plan booking percent,True,10%;20%;36,payment_plans.md;brochures/bahria_karachi_apt.md;faqs.md,0.2666
+large_1200,DHA Phase 6 schools and hospitals,True,Beaconhouse;South City,locations.md;brochures/dha_phase6_house.md;faqs.md,0.3646
+large_1200,Shahrah-e-Faisal showroom size,True,4000;showroom,brochures/commercial_faisal.md,0.4649
+large_1200,Rental advance and security deposit,True,1–2 months;security;1 month,payment_plans.md;faqs.md;locations.md,0.142
+large_1200,Bahria Town Karachi apartment precinct 10,True,Precinct 10;1600,brochures/bahria_karachi_apt.md;payment_plans.md;locations.md,0.2709
+large_1200,Islamabad G-11 office nearby hospital,True,PIMS;G-11,locations.md;locations.md;brochures/dha_phase6_house.md,0.1644
+large_1200,Overseas clients power of attorney,True,power-of-attorney;lawyer,faqs.md;locations.md,0.1473
