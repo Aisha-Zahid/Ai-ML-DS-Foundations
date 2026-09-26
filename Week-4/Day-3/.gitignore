@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.ipynb_checkpoints/
+audio_out/
+.DS_Store

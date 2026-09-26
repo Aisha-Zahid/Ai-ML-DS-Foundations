@@ -1,0 +1,4 @@
+recording,title,naturalness,persuasiveness,fluency,latency,conversation_flow,average
+call_01_buyer_memory.json,Buyer qualify → DHA options → cheaper,4,4,5,5,5,4.6
+call_02_objections.json,Price + trust objections,4,5,4,5,4,4.4
+call_03_faq_close.json,Maintenance FAQ + soft close,4,3,4,5,4,4.0

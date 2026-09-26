@@ -1,0 +1,12 @@
+{
+  "n": 6,
+  "under_2s_rate": 1.0,
+  "avg_total_ms": 335.9,
+  "p95_total_ms": 450.7,
+  "budget_ms": 2000,
+  "barge_in": {
+    "interrupted": true,
+    "ttfa_ms": 0.1,
+    "provider": "mock_tts"
+  }
+}

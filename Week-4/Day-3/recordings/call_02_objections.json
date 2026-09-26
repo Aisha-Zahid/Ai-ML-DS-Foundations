@@ -1,0 +1,21 @@
+{
+  "title": "Price + trust objections",
+  "language": "UrduLish",
+  "turns": [
+    {"role": "user", "text": "Karachi Bahria apartment, budget 2.5 crore"},
+    {"role": "assistant", "text": "Theek hai, Bahria Karachi ~2.5 crore. Options nikalta hoon…"},
+    {"role": "user", "text": "Thoda mehnga lag raha hai"},
+    {"role": "assistant", "text": "Ji rate thoda premium feel ho sakta hai — payment plan aur comparable dekh lete hain. Alternative shortlist…"},
+    {"role": "user", "text": "Builder pe trust nahi aa raha"},
+    {"role": "assistant", "text": "Sahi sawal hai. Main sirf verified file se bolta hoon — Bahria allotment status confirm, visit pe khud dekh lena."}
+  ],
+  "human_scores": {
+    "naturalness": 4,
+    "persuasiveness": 5,
+    "fluency": 4,
+    "latency": 5,
+    "conversation_flow": 4,
+    "reviewer": "self-review + peer checklist",
+    "comments": "Objections grounded; no fake ROI. Could add one more empathy beat before alternatives."
+  }
+}

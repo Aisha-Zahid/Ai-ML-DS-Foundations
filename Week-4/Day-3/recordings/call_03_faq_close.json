@@ -1,0 +1,19 @@
+{
+  "title": "Maintenance FAQ + soft close",
+  "language": "UrduLish",
+  "turns": [
+    {"role": "user", "text": "Maintenance charges kya hote hain Bahria mein?"},
+    {"role": "assistant", "text": "Hmm… Maintenance usually society charge karti hai — exact monthly figure confirm. FAQ: society bills maintenance…"},
+    {"role": "user", "text": "Theek hai, visit book karte hain Saturday"},
+    {"role": "assistant", "text": "Ji bilkul — Saturday visit soft-hold. Name aur phone de dein, Day-4 pe calendar confirm karenge."}
+  ],
+  "human_scores": {
+    "naturalness": 4,
+    "persuasiveness": 3,
+    "fluency": 4,
+    "latency": 5,
+    "conversation_flow": 4,
+    "reviewer": "self-review + peer checklist",
+    "comments": "Honest on maintenance; booking deferred to Day-4 calendar integration (correct)."
+  }
+}

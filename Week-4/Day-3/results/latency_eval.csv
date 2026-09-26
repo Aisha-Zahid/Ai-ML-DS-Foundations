@@ -1,0 +1,7 @@
+user,stt_ms,reason_ms,tts_ttfa_ms,tts_ms,total_ms,under_2s,intent
+Hello,50.5,84.4,0.1,63.5,199.1,True,greet
+"Karachi mein buy, budget 2.5 crore",50.4,86.2,0.0,145.8,282.7,True,recommend
+Bahria mein apartment chahiye,50.7,83.7,0.0,166.4,301.1,True,recommend
+Builder pe trust nahi aa raha,50.4,162.8,0.0,308.3,521.7,True,objection:trust
+Maintenance charges kya hote hain?,50.3,90.2,0.0,310.1,450.7,True,objection:maintenance
+Us se sasti option?,50.3,83.4,0.0,125.9,259.9,True,recommend

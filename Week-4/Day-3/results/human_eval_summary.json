@@ -1,0 +1,42 @@
+{
+  "per_recording": [
+    {
+      "recording": "call_01_buyer_memory.json",
+      "title": "Buyer qualify \u2192 DHA options \u2192 cheaper",
+      "naturalness": 4,
+      "persuasiveness": 4,
+      "fluency": 5,
+      "latency": 5,
+      "conversation_flow": 5,
+      "average": 4.6
+    },
+    {
+      "recording": "call_02_objections.json",
+      "title": "Price + trust objections",
+      "naturalness": 4,
+      "persuasiveness": 5,
+      "fluency": 4,
+      "latency": 5,
+      "conversation_flow": 4,
+      "average": 4.4
+    },
+    {
+      "recording": "call_03_faq_close.json",
+      "title": "Maintenance FAQ + soft close",
+      "naturalness": 4,
+      "persuasiveness": 3,
+      "fluency": 4,
+      "latency": 5,
+      "conversation_flow": 4,
+      "average": 4.0
+    }
+  ],
+  "means": {
+    "naturalness": 4.0,
+    "persuasiveness": 4.0,
+    "fluency": 4.33,
+    "latency": 5.0,
+    "conversation_flow": 4.33,
+    "n_recordings": 3
+  }
+}
